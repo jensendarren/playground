@@ -8,8 +8,8 @@ const io = require("socket.io")(server, options);
 io.on("connection", (socket) => {
     console.log('Server is connected to client.')
     socket.on('foo', (cmd) => {
-        console.log(`Received ${msg} from client!`)
         let msg = `Hey I just got ${cmd} from you!`
+        console.log(msg)
         io.emit('message', msg);
     });
 });
