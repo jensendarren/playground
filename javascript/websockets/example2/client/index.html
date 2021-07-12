@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Web Socket Example 2: Socket IO</title>
+    <script src="socket.io.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>Web Socket Example 2</p>
+      <button onclick="sendCmd()">Send Message to Server</button>
+      <b>WebSocket Events</b>
+      <ul id="wsevents"></ul>
+    </div>
+    <script>
+        // example of a callback function that can be used to handle data from a websocket
+        function websocketMessageHandler(data) {
+            let li = document.createElement("li");
+            let wsmsg = document.createTextNode(data);
+            li.appendChild(wsmsg);
+            document.getElementById("wsevents").appendChild(li);
+        }
+        function sendCmd() {
+            socket.emit('foo', 'a command');
+        }
+        // uncomment below to debug
+        // localStorage.debug = '*';
+
+        // connect to the socket server
+        const URL = 'ws://localhost:3000'
+        const socket = io(URL);
+
+        // when connected, output the socket id
+        socket.on("connect", () => {
+            websocketMessageHandler(`Client is connected to WebSocket with ID: ${socket.id}`)
+        });
+
+        // when a websokect ping event is received append to the DOM using the callback
+        socket.io.on("ping", () => {
+            websocketMessageHandler('Client received ping from socket')
+        });
+
+        // when message event is received append to the DOM using the callback
+        socket.on("message", (msg) => {
+            websocketMessageHandler(`Message: ${msg}`)
+        });
+    </script>
+  </body>
+</html>
