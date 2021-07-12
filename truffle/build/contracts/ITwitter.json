@@ -1,0 +1,250 @@
+{
+  "contractName": "ITwitter",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "contents",
+          "type": "string"
+        }
+      ],
+      "name": "tweet",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"contents\",\"type\":\"string\"}],\"name\":\"tweet\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/darren/workspace/playground/truffle/contracts/ITwitter.sol\":\"ITwitter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/darren/workspace/playground/truffle/contracts/ITwitter.sol\":{\"keccak256\":\"0xdf74d1b2bda9a2dbab62c5070658a7a44e1c64002cdc30ccf106d5c511a80c09\",\"urls\":[\"bzz-raw://a9f9e813074e0c7cf0a42cdfb0fde1222dd058d6f553f8690218c44295829e31\",\"dweb:/ipfs/QmNg11VN7oqZKo6eD5bUsjCGJKennbJdRX28oW4UCAg9Ng\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >= 0.5.0 < 0.7.0;\ninterface ITwitter {\n  function tweet(string memory contents) external;\n}",
+  "sourcePath": "/Users/darren/workspace/playground/truffle/contracts/ITwitter.sol",
+  "ast": {
+    "absolutePath": "/Users/darren/workspace/playground/truffle/contracts/ITwitter.sol",
+    "exportedSymbols": {
+      "ITwitter": [
+        7
+      ]
+    },
+    "id": 8,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:33:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7,
+        "linearizedBaseContracts": [
+          7
+        ],
+        "name": "ITwitter",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "fb46d4c5",
+            "id": 6,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tweet",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3,
+                  "mutability": "mutable",
+                  "name": "contents",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6,
+                  "src": "72:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "72:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "71:24:0"
+            },
+            "returnParameters": {
+              "id": 5,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "104:0:0"
+            },
+            "scope": 7,
+            "src": "57:48:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8,
+        "src": "34:73:0"
+      }
+    ],
+    "src": "0:107:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/darren/workspace/playground/truffle/contracts/ITwitter.sol",
+    "exportedSymbols": {
+      "ITwitter": [
+        7
+      ]
+    },
+    "id": 8,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:33:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 7,
+        "linearizedBaseContracts": [
+          7
+        ],
+        "name": "ITwitter",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "fb46d4c5",
+            "id": 6,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tweet",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3,
+                  "mutability": "mutable",
+                  "name": "contents",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6,
+                  "src": "72:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "72:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "71:24:0"
+            },
+            "returnParameters": {
+              "id": 5,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "104:0:0"
+            },
+            "scope": 7,
+            "src": "57:48:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8,
+        "src": "34:73:0"
+      }
+    ],
+    "src": "0:107:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2021-05-08T06:10:09.059Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -1,0 +1,3 @@
+{"level":30,"time":1616556468446,"pid":84878,"hostname":"Darrens-MacBook-Pro.local","msg":"Some log message (to multiple streams)"}
+{"level":30,"time":1616556468448,"pid":84878,"hostname":"Darrens-MacBook-Pro.local","msg":"Some log message (to even more multiple streams)"}
+{"level":30,"time":1616556468448,"pid":84878,"hostname":"Darrens-MacBook-Pro.local","msg":"Stop!!"}
