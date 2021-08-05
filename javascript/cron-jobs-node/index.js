@@ -1,10 +1,7 @@
 const cron = require('node-cron');
-const express = require('express');
 
-app = express();
-
-// Schedule tasks to be run on the server.
 /*
+  https://www.npmjs.com/package/node-cron
 
   * * * * * *
   | | | | | |
@@ -19,5 +16,3 @@ app = express();
 cron.schedule('* * * * *', function() {
   console.log('running a task every minute'); // replace with whatever function you need to perform!
 });
-
-app.listen(3000);
