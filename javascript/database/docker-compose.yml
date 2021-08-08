@@ -7,11 +7,13 @@ services:
     env_file:
       - app.env
     volumes:
-      - ./api:/app/api:ro
+      - ./src:/app/src:ro
+      - /app/node_modules # do not override node_modules
     ports:
       - "3000:3000"
     depends_on:
       - db
+    command: npm run dev
     stdin_open: true
     tty: true
 
