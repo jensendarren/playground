@@ -1,5 +1,3 @@
-// Update with your config settings.
-
 const { DATABASE_URL } = process.env
 
 module.exports = {

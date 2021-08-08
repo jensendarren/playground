@@ -1,10 +1,3 @@
-const knexjs = require('knex');
-
-const db = knexjs({
-  client: 'pg',
-  connection: process.env.DATABASE_URL,
-  migrations: { tableName: 'migrations' },
-  pool: { min: 0, max: 10 },
-});
-
-module.exports = db;
+const environment = process.env.NODE_ENV || 'development'
+const config = require('../../knexfile')[environment]
+module.exports = require('knex')(config)
