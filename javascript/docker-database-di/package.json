@@ -1,20 +1,19 @@
 {
-  "name": "nodejs_database",
+  "name": "nodejs_3ds",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "NodeJS 3Ds Example: Docker, Database and Dependency Injection",
+  "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive",
+    "test": "mocha 'src/test' --recursive",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [],
+  "keywords": ["docker", "knex", "awilix", "dependency injection", "mocha", "postgres", "pgadmin"],
   "author": "Darren Jensen",
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "awilix": "^4.3.4",
-    "convict": "^5.2.1",
     "express": "^4.17.1",
     "knex": "^0.21.20",
     "pg": "^8.7.1"

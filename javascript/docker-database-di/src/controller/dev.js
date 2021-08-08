@@ -21,6 +21,7 @@ class DevController {
   async getDev(req, res, next) {
     try {
       const developerId = req.params.id;
+      console.log(`Fetching dev with id: ${developerId}`)
       const developer = await this.devService.getDev(req.params.id);
       if (developer == null) {
         next(ApiError.notFound(`developer with id ${developerId} not found`));

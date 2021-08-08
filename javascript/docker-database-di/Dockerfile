@@ -19,4 +19,4 @@ RUN npm install --global --unsafe-perm knex
 # Bundle app source
 COPY . .
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "index.js" ]

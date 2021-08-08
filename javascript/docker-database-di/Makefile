@@ -8,3 +8,6 @@ db_migrate:
 
 db_seed:
 	docker-compose run --entrypoint "knex seed:run" app db
+
+test:
+	docker-compose run --entrypoint "npm run test" app
