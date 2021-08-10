@@ -1,7 +1,7 @@
 const awilix = require('awilix');
-const DevController = require('./src/controller/dev');
-const DevService = require('./src/service/dev');
-const DevDao = require('./src/dao/dev');
+const FileController = require('./src/controller/file');
+const FileService = require('./src/service/file');
+const FileDao = require('./src/dao/file');
 const db = require('./src/db');
 
 const container = awilix.createContainer({
@@ -10,13 +10,13 @@ const container = awilix.createContainer({
 
 function setup() {
   container.register({
-    devController: awilix.asClass(DevController),
+    fileController: awilix.asClass(FileController),
 
     // services
-    devService: awilix.asClass(DevService),
+    fileService: awilix.asClass(FileService),
 
     // DAOs
-    devDao: awilix.asClass(DevDao),
+    fileDao: awilix.asClass(FileDao),
 
     // inject knexjs object with database connection pooling
     // support

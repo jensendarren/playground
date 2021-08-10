@@ -25,19 +25,19 @@ services:
     volumes:
       - database-data:/var/lib/postgresql/data/
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin
-    restart: always
-    depends_on:
-      - db
-    ports:
-      - 5050:80
-    environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin@example.com
-      PGADMIN_DEFAULT_PASSWORD: 123456789
-    volumes:
-      - ./pgadmin-servers.json:/pgadmin4/servers.json:ro
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   container_name: pgadmin
+  #   restart: always
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 5050:80
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: pgadmin@example.com
+  #     PGADMIN_DEFAULT_PASSWORD: 123456789
+  #   volumes:
+  #     - ./pgadmin-servers.json:/pgadmin4/servers.json:ro
 
 volumes:
   database-data:

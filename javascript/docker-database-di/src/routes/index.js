@@ -1,7 +1,7 @@
 const express = require('express');
-const devRouter = require('./dev');
+const filesRouter = require('./files');
 
 const router = express.Router();
-router.use('/dev', devRouter);
+router.use('/files', filesRouter);
 
 module.exports = router;
