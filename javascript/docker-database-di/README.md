@@ -66,6 +66,29 @@ make psql_console
 
 With the above command, you will be dropped directly into an authorized `psql` shell where you can run the usual commands and `SQL` to test out your database.
 
+## Example SQL query
+
+After the migrations and seeds are run then try out the following sql query:
+
+```
+SELECT 	files.size,
+		files.expires as "file expires",
+		files.ul_status as "file ul status",
+		chunks.length,
+		chunks.expires as "chunk expires",
+		chunks.ul_status as "chunk ul status"
+FROM files
+INNER JOIN chunks ON files.id = chunks.file_id;
+```
+
+## Mocha Tests
+
+Tests are written in Mocha and can be run from within the docker container using the command:
+
+```
+make test
+```
+
 ## References
 
 ### Running NodeJS apps in Docker
@@ -81,6 +104,7 @@ For more information on running NodeJS apps in Docker
 For more information on Knex Migrations and Database Seeding, please refer to:
 
 * [knexjs](https://knexjs.org/)
+* [knex cheatsheet][https://devhints.io/knex]
 * [Gist for migrations and seeding](https://gist.github.com/NigelEarle/70db130cc040cc2868555b29a0278261)
 * [Knex Migration For Schema and Seeds with Postgresql](https://www.heady.io/blog/knex-migration-for-schema-and-seeds-with-postgresql).
 

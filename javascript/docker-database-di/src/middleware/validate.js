@@ -8,8 +8,7 @@ function validate(schema) {
       return;
     }
 
-    // replace request body with validated value
-    // because then we have applied defaults
+    // set req.body with the validated value to ensure that defaults are passed downstream
     req.body = value;
     next();
   };

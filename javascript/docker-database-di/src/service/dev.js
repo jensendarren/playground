@@ -9,7 +9,6 @@ class DevService {
     }
 
     createDev({ email, firstName, middleNames, lastName }) {
-      // John Smith  Alexander Johnson
       const { fName, mNames, lName } = this.sanitizeNames(
         firstName,
         middleNames,

@@ -5,13 +5,15 @@ module.exports = {
   development: {
     client: 'pg',
     connection: DATABASE_URL,
-    migrations: { tableName: 'migrations' },
+    migrations: {
+      tableName: 'migrations'
+    },
     pool: { min: 0, max: 10 },
     migrations: {
-        directory: __dirname + '/db/migrations',
+        directory: __dirname + '/src/db/migrations',
     },
     seeds: {
-        directory: __dirname + '/db/seeds',
+        directory: __dirname + '/src/db/seeds',
     },
   },
 
@@ -27,7 +29,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'migrations'
     }
   },
 
@@ -43,7 +45,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'migrations'
     }
   }
 

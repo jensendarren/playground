@@ -1,8 +1,10 @@
-const joi = require('@hapi/joi');
+const Joi = require('joi');
 
-module.exports = joi.object({
-  email: joi.string().email().required(),
-  firstName: joi.string().min(1).required(),
-  middleNames: joi.string().allow(null).empty('').default(null),
-  lastName: joi.string().min(1).required(),
-});
+const schema = Joi.object({
+    email: Joi.string().email().required(),
+    firstName: Joi.string().min(1).required(),
+    middleNames: Joi.string().allow(null).empty('').default(null),
+    lastName: Joi.string().min(1).required(),
+})
+
+module.exports = schema;

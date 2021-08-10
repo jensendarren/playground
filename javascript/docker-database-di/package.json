@@ -8,13 +8,21 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": ["docker", "knex", "awilix", "dependency injection", "mocha", "postgres", "pgadmin"],
+  "keywords": [
+    "docker",
+    "knex",
+    "awilix",
+    "dependency injection",
+    "mocha",
+    "postgres",
+    "pgadmin"
+  ],
   "author": "Darren Jensen",
   "license": "ISC",
   "dependencies": {
-    "@hapi/joi": "^17.1.1",
     "awilix": "^4.3.4",
     "express": "^4.17.1",
+    "joi": "^17.4.2",
     "knex": "^0.21.20",
     "pg": "^8.7.1"
   },
