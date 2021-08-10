@@ -6,7 +6,7 @@ const fileDto = require('../dto/file');
 const fileController = container.resolve('fileController');
 
 const router = express.Router();
-// router.post('/', validate(fileDto), fileController.createFile);
+router.post('/', validate(fileDto), fileController.createFile);
 router.get('/:id', fileController.getFile);
 
 module.exports = router;

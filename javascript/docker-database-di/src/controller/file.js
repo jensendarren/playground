@@ -4,19 +4,19 @@ class FileController {
   constructor({ fileService }) {
     this.fileService = fileService;
 
-    // this.createDev = this.createDev.bind(this);
+    this.createFile = this.createFile.bind(this);
     this.getFile = this.getFile.bind(this);
   }
 
-  // async createDev(req, res) {
-  //   try {
-  //     const result = await this.fileService.createDev(req.body);
-  //     res.status(201).json(result);
-  //   } catch (err) {
-  //     console.error(err);
-  //     res.status(500).json('error');
-  //   }
-  // }
+  async createFile(req, res) {
+    try {
+      const result = await this.fileService.createFile(req.body);
+      res.status(201).json(result);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json('error');
+    }
+  }
 
   async getFile(req, res, next) {
     try {

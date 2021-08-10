@@ -89,6 +89,8 @@ Tests are written in Mocha and can be run from within the docker container using
 make test
 ```
 
+## How was this project put together?
+
 ## References
 
 ### Running NodeJS apps in Docker

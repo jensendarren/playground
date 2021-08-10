@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const schema = Joi.object({
-    original_path: Joi.string().email().required(),
+    original_path: Joi.string().required(),
     size: Joi.number().required(),
     redundancy: Joi.number().required(),
     expires: Joi.number().required(),

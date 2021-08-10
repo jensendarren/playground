@@ -8,15 +8,9 @@ class FileService {
       return this.fileDao.getFile(id);
     }
 
-    // createDev({ email, firstName, middleNames, lastName }) {
-    //   const { fName, mNames, lName } = this.sanitizeNames(
-    //     firstName,
-    //     middleNames,
-    //     lastName
-    //   );
-
-    //   return this.devDao.createDev(email, fName, mNames, lName);
-    // }
+    createFile({ original_path, size, redundancy, expires, autorenew, chunk_count, ul_status }) {
+      return this.fileDao.createFile(original_path, size, redundancy, expires, autorenew, chunk_count, ul_status);
+    }
   }
 
   module.exports = FileService;

@@ -3,17 +3,20 @@ class FileDao {
       this.db = db;
     }
 
-    // async createFile(email, firstName, middleNames, lastName) {
-    //   const [id] = await this.db('developers')
-    //     .insert({
-    //       email,
-    //       first_name: firstName,
-    //       middle_names: middleNames,
-    //       last_name: lastName,
-    //     })
-    //     .returning('id');
-    //   return id;
-    // };
+    async createFile(original_path, size, redundancy, expires, autorenew, chunk_count, ul_status) {
+      const [id] = await this.db('files')
+        .insert({
+          original_path,
+          size,
+          redundancy,
+          expires,
+          autorenew,
+          chunk_count,
+          ul_status
+        })
+        .returning('id');
+      return id;
+    };
 
     async getFile(id) {
       try {
