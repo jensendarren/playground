@@ -49,3 +49,16 @@ let newGasEIP1559 = adjustGasPrice(gasEIP1559)
 
 console.log('newGasLegacy', newGasLegacy)
 console.log('newGasEIP1559', newGasEIP1559)
+
+let gpo = { "gasPrice": "0x4a817c800", "dadouPrice": "0x1ad27480" }
+// let gpo = "0x4a817c800"
+
+gasStr = ''
+
+if(typeof gpo == 'object') {
+	gasStr =  Object.entries(gpo).reduce((out, [k,v]) => { out += `${k} = ${parseInt(v) / 1e9} GWei (${parseInt(v)} Wei) `; return out; }, '')
+} else {
+	gasStr = `gasPrice == ${parseInt(gpo) / 1e9} GWei (${parseInt(gpo)} Wei) `
+}
+
+console.log(gasStr)
