@@ -2,11 +2,16 @@
 // like the mnemomic below. Note: .env is ignored by git in this project to keep your private information safe
 require('dotenv').config();
 const ganacheMnemonic = process.env["GANACHE_MNEMONIC"];
-// console.log('*** GANACHE_MNEMONIC', ganacheMnemonic)
 const kovanMnemonic = process.env["KOVAN_MNEMONIC"];
+const kovanPK = process.env["KOVAN_PK"];
+
 const mnemonic = 'test test test test test test test test test test test junk' // process.env["MNEMONIC"];
 
-const infuraKey = process.env["INFURA_KEY"];
+// const infuraKey = process.env["INFURA_KEY"];
+const alchemyAPiUrl = process.env["ALCHEMY_API_URL"];
+
+console.log('kovanPK: ', kovanPK)
+
 
 //uncomment to use mainnetMnemonic, be sure to set it in the .env file
 //const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
@@ -59,13 +64,15 @@ module.exports = {
         })
       }
     },
+
+    // Note may need to set the gasPrice at the tx level to 15000000
     optimistic_kovan: {
       network_id: 69,
       chain_id: 69,
-      gas: 32970000,
+      gas:  15000000,
       provider: function() {
-        return new HDWalletProvider(kovanMnemonic, "https://optimism-kovan.infura.io/v3/"+ infuraKey, 0, 1);
-      }
+        return new HDWalletProvider(kovanPK, alchemyAPiUrl, 0, 1);
+      },
     },
     // requires a mainnet mnemonic; you can save this in .env or in whatever secure location
     // you wish to use
