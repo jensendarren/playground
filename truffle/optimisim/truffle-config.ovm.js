@@ -2,16 +2,11 @@
 // like the mnemomic below. Note: .env is ignored by git in this project to keep your private information safe
 require('dotenv').config();
 const ganacheMnemonic = process.env["GANACHE_MNEMONIC"];
-const kovanMnemonic = process.env["KOVAN_MNEMONIC"];
 const kovanPK = process.env["KOVAN_PK"];
-
 const mnemonic = 'test test test test test test test test test test test junk' // process.env["MNEMONIC"];
 
 // const infuraKey = process.env["INFURA_KEY"];
-const alchemyAPiUrl = process.env["ALCHEMY_API_URL"];
-
-console.log('kovanPK: ', kovanPK)
-
+const optimisticKovanAlchemyApiUrl = process.env["OPTIMISTIC_KOVAN_ALCHEMY_API_URL"];
 
 //uncomment to use mainnetMnemonic, be sure to set it in the .env file
 //const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
@@ -65,13 +60,16 @@ module.exports = {
       }
     },
 
-    // Note may need to set the gasPrice at the tx level to 15000000
+    // NOTE: need to set "gas: 0" in the config below to force truffle to estimate the gas
+    // otherwise there is a "L2 gas limit too low: 0, use at least 100000"
+    // NOTE: that a gasMultiplier is also applied in the migration to sligtly reduce the estimate!
+    // take a look at the migration file for details
     optimistic_kovan: {
       network_id: 69,
       chain_id: 69,
-      gas:  15000000,
+      gas: 0,
       provider: function() {
-        return new HDWalletProvider(kovanPK, alchemyAPiUrl, 0, 1);
+        return new HDWalletProvider(kovanPK, optimisticKovanAlchemyApiUrl, 0, 1);
       },
     },
     // requires a mainnet mnemonic; you can save this in .env or in whatever secure location
