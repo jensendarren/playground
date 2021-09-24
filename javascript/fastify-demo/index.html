@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Fastify Upload File Demo</title>
+  </head>
+  <body>
+    <div>
+      <h1>Fastify Upload File Demo</h1>
+
+      <br />
+      <b>Try uploading a file!</b>
+        <br>
+        <input id="fileupload" type="file" name="fileupload"></input>
+        <br><br>
+        <button id="btnFileupload" onclick="uploadFile()">Upload File</button>
+        <br>
+      <br />
+    </div>
+    <script>
+      async function uploadFile() {
+        const formData = new FormData()
+        // its also possible to new Blob to send text that will be saved in a fle like so:
+        // formData.append('blob', new Blob(['Hello World!\n']), 'somefile.txt')
+        formData.append("file", fileupload.files[0])
+        const res = await fetch('http://localhost:3000/', {
+            method: 'POST',
+            body: formData
+        })
+        console.log('File Upload Response: ', res);
+      }
+      </script>
+    </body>
+</html>
