@@ -60,14 +60,9 @@ module.exports = {
       }
     },
 
-    // NOTE: need to set "gas: 0" in the config below to force truffle to estimate the gas
-    // otherwise there is a "L2 gas limit too low: 0, use at least 100000"
-    // NOTE: that a gasMultiplier is also applied in the migration to sligtly reduce the estimate!
-    // take a look at the migration file for details
     optimistic_kovan: {
       network_id: 69,
       chain_id: 69,
-      gas: 0,
       provider: function() {
         return new HDWalletProvider(kovanPK, optimisticKovanAlchemyApiUrl, 0, 1);
       },
