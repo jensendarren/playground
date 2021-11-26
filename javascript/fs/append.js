@@ -1,9 +1,12 @@
 const filename = 'append.json'
-const { statSync, truncateSync, createWriteStream } = require('fs');
-const util = require('util');
-const cp = require('child_process');
-const lines2nuke = 1;
-const command = util.format('tail -n %d %s', lines2nuke, filename);
+const { stat, truncateSync, createWriteStream } = require('fs');
+
+stat(filename, (err, stats) => {
+    truncateSync(filename, stats.size - 1, (err) => {
+        if (err) throw err;
+        console.log('File truncated!');
+    })
+})
 
 appendContent = () => {
     const stream = createWriteStream(filename, {flags:'a'});
@@ -14,19 +17,4 @@ appendContent = () => {
     stream.close();
 }
 
-const child = cp.exec(command, (err, stdout, stderr) => {
-    if (err) throw err;
-    let to_vanquish = stdout.length;
-    statSync(filename, (err, stats) => {
-        if (err) throw err;
-        truncateSync(filename, stats.size - to_vanquish, (err) => {
-            if (err) throw err;
-            console.log('File truncated!');
-        })
-    });
-});
-
-child.on('exit', function() {
-    console.log('DONE!');
-    appendContent();
-})
+appendContent();
